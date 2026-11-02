@@ -1,0 +1,63 @@
+{
+    "name": "ahmed29345/llm-tool-calling",
+    "description": "Framework-agnostic LLM agent loop for PHP with tool calling scoped by user role and permission.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "llm",
+        "ai",
+        "agent",
+        "tool-calling",
+        "function-calling",
+        "openai",
+        "ollama",
+        "psr-18",
+        "rbac"
+    ],
+    "authors": [
+        {
+            "name": "Muhammad Ahmed Raza Memon",
+            "homepage": "https://github.com/ahmed29345"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.8",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "A PSR-18 HTTP client with PSR-17 factories (GuzzleHttp\\Psr7\\HttpFactory).",
+        "symfony/http-client": "An alternative PSR-18 HTTP client."
+    },
+    "autoload": {
+        "psr-4": {
+            "Ahmed29345\\LlmToolCalling\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ahmed29345\\LlmToolCalling\\Tests\\": "tests/",
+            "Ahmed29345\\LlmToolCalling\\Examples\\": "examples/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=512M",
+        "check": [
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
